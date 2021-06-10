@@ -1,26 +1,44 @@
+/*Estilos Genrales*/
 body {
     /*Variables*/
     --color-bg: #dddddd;
     --color-texto: #161211;
-
+    overflow-x: hidden;
 }
 
 body.dark-theme {
     --color-bg: rgb(47, 47, 47);
     --color-texto: #ffb847;
 }
+/*Estilos cuando el body contiene las clases dark o light que se agregan cuando se detecta el color default del equipo o cuando el usuario da click al boton en el sito*/
+body.dark-theme img {
+    filter: grayscale(100%);
+}
+
+body.light-theme img {
+    filter: grayscale(0%);
+}
 
 .contenedor {
     display: grid;
     place-items: center;
 }
-
+/*Estilos generales, se le aplican tanto en dark como en light*/
 button {
     padding: 10px 50px;
     background: transparent;
     border: 1px solid var(--color-texto);
     color: var(--color-texto);
     cursor: pointer;
+}
+
+img {
+    width: 70%;
+    height: 70%;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 10px;
+    transition: filter 1s ease-in-out;
 }
 
 body.dark-theme {
@@ -44,13 +62,20 @@ body.dark-theme {
         --color-bg: #dddddd;
         --color-texto: #161211;
     }
-}
 
+    img {
+        filter: grayscale(0%);
+
+    }
+}
+/* Estilos finales */
 body {
     background-color: var(--color-bg);
-    transition: background .8s ease-out;
+    transition: background-color .8s ease-out;
 }
 
 h1 {
     color: var(--color-texto);
+    transition: color .8s ease-out;
+
 }
