@@ -1,0 +1,26 @@
+body {
+    /*Variables*/
+    --color-bg: #dddddd;
+    --color-texto: #161211;
+}
+
+body.dark-theme {
+    --color-bg: rgb(47, 47, 47);
+    --color-texto: #ffb847;
+}
+
+/*Esta media nos sirve para saber el tema que el usuario tiene en su equipo de windows 10 y asi el sitio se pondra del color del mismo */
+@media (prefers-color-scheme: dark) {
+    body {
+        --color-bg: rgb(47, 47, 47);
+        --color-texto: #ffb847;
+    }
+}
+
+body {
+    background-color: var(--color-bg);
+}
+
+h1 {
+    color: var(--color-texto);
+}
